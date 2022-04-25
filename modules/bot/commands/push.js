@@ -17,8 +17,7 @@ async function main() {
         });
     }
     //await awaitCommand("git pull origin main");
-    await awaitCommand('git config credential.helper store && git config --global user.email "j.huang35@share.epsb.ca" && git config --global user.name "Jiankun-Huang" && git remote set-url origin git@github.com:JH-Jack/oxyrex-server.git && git add . && git commit -m "Push Changes from discord" && git push --set-upstream origin master');
-    await awaitCommand('git config credential.helper store && git config --global user.email "j.huang35@share.epsb.ca" && git config --global user.name "Jiankun-Huang" && git add . && git commit -m "Push Changes from discord" && git remote set-url origin "https://${credentials.username}:${credentials.token}@github.com/JH-Jack/oxyrex-server" && git push origin --all')
+    await awaitCommand('git config credential.helper store && git config --global user.email "j.huang35@share.epsb.ca" && git config --global user.name "Jiankun-Huang" && git add . && git commit -m "Push Changes from discord" && git remote set-url origin "https://Jiankun-Huang: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@github.com/JH-Jack/oxyrex-server" && git push origin --all')
     console.log("Done!");
     closeArena();
 };
