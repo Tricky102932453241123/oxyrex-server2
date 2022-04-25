@@ -1,0 +1,13 @@
+-added icegun, a minigun with a slight freeze effect
+-added snowgun, a streamliner with a weak freeze effect
+-added nor' easter, a cropduster with a slight freeze effect
+-added hail, a hotshot with a slight freeze effect
+-bots now die when the arena closes
+-added many new arena closer variants
+-spearmint now branches off of frostbite
+-icebox now branches off of chiller
+-rat poison now branches of acid
+-nerfed the health of most basic bosses
+-fixed a few issues with motherships
+-slightly nerfed redistributor and stabilizer branch reload
+-buffed summoner drone attack range
