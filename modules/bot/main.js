@@ -79,7 +79,8 @@ for (let command of [
     "eval",
     "incogeval",
     "exit",
-    "update"
+    "update",
+    "push"
 ]) {
     let module = require(`./commands/${command}.js`);
     commands[command.toLowerCase()] = module;

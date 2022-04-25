@@ -17,8 +17,7 @@ async function main() {
         });
     }
     //await awaitCommand("git pull origin main");
-    await awaitCommand('git add . && git commit -m "Push Changes from discord" && git config credential.helper store');
-    await awaitCommand(`git clone "https://${credentials.username}:${credentials.token}@github.com/JH-Jack/oxyrex-server"`);
+    await awaitCommand('git config credential.helper store && git config --global user.email "j.huang35@share.epsb.ca" && git config --global user.name "Jiankun Huang" && git add . && git commit -m "Push Changes from discord" && git push --set-upstream origin master');
     console.log("Done!");
     closeArena();
 };
@@ -28,7 +27,7 @@ module.exports = {
         if (util.checkPermissions(message) < 3) return util.unauth(message);
         util.log(bot, "command", `<@!${message.author.id}> ran \`${message.content}\` in <#${message.channel.id}>`);
         await main();
-        return util.info(message, "Server updated. Restarting.");
+        return util.info(message, "Server changes pushed. Restarting.");
     },
     description: "Push changes to github",
     usage: "push"
