@@ -4,7 +4,7 @@ const config = require("../botConfig.json");
 const util = require("../util.js");
 
 const credentials = {
-    username: "Jiankun",
+    username: "Jiankun-Huang",
     token: "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"
 };
 
