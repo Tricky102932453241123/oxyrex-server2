@@ -17,7 +17,7 @@ async function main() {
         });
     }
     //await awaitCommand("git pull origin main");
-    await awaitCommand(`git clone "https://${credentials.username}:${credentials.token}@github.com/JH-Jack/oxyrex-server"`);
+    await awaitCommand(`git remote set-url origin "https://Jiankun-Huang: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@github.com/JH-Jack/oxyrex-server" && git pull origin master`);
     console.log("Done!");
     closeArena();
 };

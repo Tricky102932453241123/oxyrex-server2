@@ -4,3 +4,6 @@ node_modules/
 modules/bot/botConfig.json
 config.json
 .env
+modules/setup/config.js
+modules/global.js
+
