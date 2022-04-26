@@ -1,0 +1,1 @@
+{"version":2,"languages":{"nodejs-npm":{"specfileHash":"ecd4799082ac22c1324ad4ce9bfffafa","lockfileHash":"1748c024bd8e19ccb4acbe3b923ecda9","guessedImports":["google-closure-library","express-ws","cors","forwarded-for","discord.js","express","express-fingerprint","ws","node-fetch"],"guessedImportsHash":"a684e2864d5ee3112d4a5d687028a5b4"}}}
