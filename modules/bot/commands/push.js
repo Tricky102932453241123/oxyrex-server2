@@ -17,14 +17,14 @@ async function main() {
         });
     }
     //await awaitCommand("git pull origin main");
-    await awaitCommand('git config credential.helper store && git config --global user.email "j.huang35@share.epsb.ca" && git config --global user.name "Jiankun-Huang" && git add . && git commit -m "Push Changes from discord" && git remote set-url origin "https://Jiankun-Huang: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@github.com/JH-Jack/oxyrex-server" && git push origin --all')
+    await awaitCommand('git config credential.helper store && git config --global user.email "j.huang35@share.epsb.ca" && git config --global user.name "Jiankun-Huang" && git config --global core.excludesFile ~/.gitignore && git add . && git commit -m "Push Changes from discord" && git remote set-url origin "https://Jiankun-Huang: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@github.com/JH-Jack/oxyrex-server" && git push origin --all')
     console.log("Changes Pushed to Github!");
     // closeArena();
 };
 
 module.exports = {
     run: async function(bot, message, args) {
-        if (util.checkPermissions(message) < 3) return util.unauth(message);
+        if (util.checkPermissions(message) < 3) return util.unauth(message);  
         util.log(bot, "command", `<@!${message.author.id}> ran \`${message.content}\` in <#${message.channel.id}>`);
         await main();
         return util.info(message, "Server changes pushed. Restarting.");
