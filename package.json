@@ -15,9 +15,11 @@
         "forever": "^4.0.3",
         "forwarded-for": "latest",
         "google-closure-library": "^20220104.0.0",
+        "moment": "^2.29.3",
         "net": "^1.0.2",
         "node-fetch": "^2.6.7",
         "nodemon": "^2.0.15",
+        "pm2": "^5.2.0",
         "ws": "^8.5.0"
     },
     "engines": {

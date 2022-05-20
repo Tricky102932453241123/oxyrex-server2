@@ -7,7 +7,39 @@ require('google-closure-library');
 goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 
-let arenaClosers = ["arenaCloser", "twinCloser", "machineCloser", "sniperCloser", "flankCloser", "directorCloser", "pounderCloser", "trapperCloser", "growerCloser", "pelleterCloser", "propellerCloser", "closerCeption", "closer3", "closerCeptionist2", "destroyerCloser", "minishotCloser", "multishotCloser", "launcherCloser", "smasherCloser", "miniswarmerCloser", "steamboatCloser", "screwGunCloser", "naturalistCloser", "hybridarenaCloser"].map(entry => Class[entry + "AI"]);
+let arenaClosers = [
+  "arenaCloser",
+    "twinCloser",
+    "machineCloser",
+    "sniperCloser",
+    "flankCloser",
+    "directorCloser",
+    "pounderCloser",
+    "trapperCloser",
+    "growerCloser",
+    "pelleterCloser",
+    "propellerCloser",
+    "smasherCloser",
+    "closerCeption",
+    "closerCeptionist2",
+    "destroyerCloser",
+    "closer3",
+    "minishotCloser",
+    "multishotCloser",
+    "launcherCloser",
+    "miniswarmerCloser",
+    "steamboatCloser",
+    "hybridarenaCloser",
+    "screwGunCloser",
+    "naturalistCloser",
+    "swivelCloser",
+    "artilleryCloser",
+    "overseerCloser",
+    "colonyCloser",
+    "lancerCloser",
+    "subduerCloser"
+].map(entry => Class[entry + "AI"]);
+
 function closeArena() {
     if (arenaClosed) return;
     sockets.broadcast("Arena Closed: No players may join!");
@@ -21,7 +53,10 @@ function closeArena() {
                     x: room.width / 2 + (room.width * Math.cos(angle)),
                     y: room.height / 2 + (room.height * Math.sin(angle))
                 });
+            
                 o.define(ran.choose(arenaClosers));
+                  o.name = "Arena Closer";
+
                 o.color = 3;
                 o.team = -100;
                 o.skill.score = 23650;
@@ -29,7 +64,7 @@ function closeArena() {
                 o.aiSettings.seeInvisible = true;
                 o.alwaysActive = true;
                 o.sandboxId = id;
-                o.name = "Arena Closer";
+                
             }
         });
     } else {

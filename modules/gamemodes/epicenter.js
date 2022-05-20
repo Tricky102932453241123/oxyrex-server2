@@ -82,7 +82,7 @@ const epicenter = (function() {
             if (leaderCount === 1000) {
                 const winnerID = scoreboard.getWinner() - 1;
                 sockets.broadcast(teamNames[winnerID] + " has won the game!");
-                setTimeout(closeArena, 2500);
+                setTimeout(closeArena, 5000);
             }
         }
         global.botScoreboard = {};

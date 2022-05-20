@@ -50,7 +50,7 @@ const dominatorLoop = (function() {
             let team = teamNames[teamId];
             sockets.broadcast(team + " has won the game!");
             setTimeout(closeArena, 3e3);
-        }, 1500);
+        }, 5000);
     };
 
     function tally() {

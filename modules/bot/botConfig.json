@@ -9,12 +9,12 @@
         "achievementDatabase": "965230843519959070"
     },
     "permissions": {
+        "834146510752710696": 4,
         "760128808094793738": 3,
         "566088700157493249": 3,
         "757433752652611686": 3,
-        "834146510752710696": 3,
+        "424295950610202624": 3,
         "670757057267236864": 1,
-        "834146510752710696": 1,
         "581216038826541056": 1
     },
     "rolesThatCanJoinBeta": {
@@ -24,6 +24,6 @@
         "919283439931379763": "Co-Developer",
         "898443946257154128": "Administrator"
     },
-    "token": "OTYzMDY1ODYzMTYwODg1MjU5.YlQq-g.ZXtSMquX46AtR2AIWv_MT0ohIuA",
-    "prefix": ">"
+    "token": "OTYzMDY1ODYzMTYwODg1MjU5.YlQq-g.y8tAfcPIbKqzq7QcfLjRZ_X8mHo",
+    "prefix": ">>"
 }

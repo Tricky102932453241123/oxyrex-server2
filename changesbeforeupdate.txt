@@ -1,13 +1,23 @@
--added icegun, a minigun with a slight freeze effect
--added snowgun, a streamliner with a weak freeze effect
--added nor' easter, a cropduster with a slight freeze effect
--added hail, a hotshot with a slight freeze effect
--bots now die when the arena closes
--added many new arena closer variants
--spearmint now branches off of frostbite
--icebox now branches off of chiller
--rat poison now branches of acid
--nerfed the health of most basic bosses
--fixed a few issues with motherships
--slightly nerfed redistributor and stabilizer branch reload
--buffed summoner drone attack range
+-added more arena closer variants
+-
+-arena closer bullets and base drones can now go through shields
+-
+
+
+- Added Militarized Green Triangle (boss, bosses branch)
+- Added Firework (branches from booster)
+- Added Defender Sentry
+- Defender is now included in oxyrex.io
+- Added verify command (staff only)
+- Added Excalibur (sword branch)
+- Added Zeus's Labrys (Axe Branch)
+- Added Carnwennan (Dagger Branch)
+- Added Auto Machine (machine branch, auto basic branch)
+- Added Spear (lancer branch)
+- Added Spartan Spear (spear branch)
+- Added Gungnir (spartan spear branch)
+- Added Spear of Leonidas (spartan spear branch)
+- Added Propeller Ceptionist (basic-ceptionist branch)
+- Added Tri-Angle Ceptionist (propeller branch)
+- Added Incendiary Trapper (trapper branch)
+-added quartet, a splitter square version of the summoner

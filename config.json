@@ -11,7 +11,7 @@
     "socketWarningLimit": 5,
     "tabLimit": 2,
     "maxPlayers": 20,
-    "BETA": 1,
+    "BETA": 0,
     "networkFrontlog": 1,
     "networkFallbackTime": 150,
     "visibleListInterval": 500,
@@ -25,7 +25,7 @@
     "WIDTH": 6500,
     "HEIGHT": 6500,
     "MODE": "ffa",
-    "TEAMS": 8,
+    "TEAMS": 2,
     "RANDOM_COLORS": false,
     "ARENA_TYPE": "rect",
     "SPAWN_PUMPKINS": false,
@@ -94,12 +94,15 @@
     "ESCORT": false,
     "SANDBOX": false,
     "TOKENS": [
-      ["TOKEN_(!1HXqcfmaYybRn%S6As,v1Zb/%v36z0_TOKEN", "760128808094793738", "$000000", 3, "PMagic#1507"],
+      ["TOKEN_(!1HXqcfmaYybRn%S6As,v1Zb/%v36z0_TOKEN", "871453089113194536", "$000000", 3, "Xero#6611"],
       ["TOKEN_ycEruD9w9Quu^n(K,9Tvlr@JA#]DhpO)_TOKEN", "566088700157493249", "$000000", 3, "JBX2010#1349"],
       ["TOKEN_PH'cZ$.9dg{jqR^gY*ZIZ,]cdwevspXi_TOKEN", "695536041175810118", "$000000", 3, "Nikita E.#1674"],
       ["TOKEN_.9yC7eYMA76}h1x5mE*RlUev#HH3Q#nO_TOKEN", "757433752652611686", "$000000", 3, "urmom.pov#3666"], 
-      ["TOKEN_vL}dx%gdsg^dsg!56x3Jh8;%KKI^sfg^&3BV_TOKEN", "670757057267236864", "$000000", 1, "dip#5574"],
+      ["TOKEN_vL}dx%gdsg^dsg!56x3Jh8;%SD^sfg^&3BV_TOKEN", "900136290153025536", "$000000", 1, "solitudeperson#5314"],
+            ["TOKEN_M4)CGD(m}^H6XHusgfH_TOKEN", "846413267160793148", "$000000", 3, "Absolute Everything#5995"],
       ["TOKEN_vL}TiX&JJI%p8xQJh8;%KKI^eH&o1vBV_TOKEN", "965367414630010950", "$000000", 1, "Tsukara#6942"],
-      ["TOKEN_Zdk$9lL2Fe3fOz4XVjf3!/S,L,$^FvSv_TOKEN", "834146510752710696", "$000000", 3, "CrazyCoder9#0663"]
+      ["TOKEN_Zdk$9lL2Fe3fOz4XVjf3!/S,L,$^FvSv_TOKEN", "834146510752710696", "$000000", 3, "CrazyCoder9#0663"],
+      ["TOKEN_X@7&de!2elefhsyjX/;S%SD{sddajgsd!king_TOKEN", "424295950610202624", "$000000", 3, "King Of Mopeio#6701"],
+      ["TOKEN_7676B66y98769676Y79H6766_TOKEN", "424295950610202624", "$000000", 3, "MF8961"]
     ]
 }

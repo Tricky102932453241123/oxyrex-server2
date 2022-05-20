@@ -34,7 +34,7 @@ function winner(teamId) {
     won = true;
     let team = teamNames[teamId];
     sockets.broadcast(team + " has won the game!");
-    setTimeout(closeArena, 3e3);
+    setTimeout(closeArena, 5e3);
 };
 
 function tagDeathEvent(instance) {

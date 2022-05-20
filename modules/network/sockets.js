@@ -55,8 +55,8 @@ const sockets = (() => {
         permissions: "setTeam",
         usage: "setTeam [team (must be a number)]",
         callback: function (socket, message, body) {
-            if (typeof message[1] !== "number" || isNaN(message[1]) || !Number.isFinite(message[1])) {
-                socket.talk("Q", "info", "Invalid team id! Please use a finite integer.");
+      if (typeof message[1] !== "number" || message[1].includes("0") || isNaN(message[1]) || !Number.isFinite(message[1])) {
+                socket.talk("Q", "info", "Invalid team id! Please use a finite integer, or the team number is not allowed.");
                 return 1;
             }
             const team = Math.abs(Math.floor(message[1]));
@@ -855,9 +855,9 @@ const sockets = (() => {
                                             y: body.y + body.control.target.y
                                         };
                                         let o = new Entity(loc);
-                                        if (socket.spawnEntity.FOOD || socket.spawnEntity.TYPE === "food") {
+                                      /*  if (socket.spawnEntity.FOOD || socket.spawnEntity.TYPE === "food") {
                                             socket.spawnEntity.BODY.ACCELERATION = 0.015 / (+socket.spawnEntity.FOOD.LEVEL + 1);
-                                        }
+                                        }*/
                                         o.define(socket.spawnEntity);
                                         if (body.sandboxId) {
                                             o.sandboxId = body.sandboxId;

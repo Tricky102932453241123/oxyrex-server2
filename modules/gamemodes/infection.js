@@ -44,7 +44,7 @@ function infectionLoop() {
     if (nestLocations.length >= room.setup.length * room.setup[0].length) {
         clearInterval(stats.id);
         sockets.broadcast("The infection has taken over the map!");
-        setTimeout(closeArena, 2500);
+        setTimeout(closeArena, 5000);
         return;
     }
     let changed = false;
@@ -56,7 +56,7 @@ function infectionLoop() {
         } else {
             clearInterval(stats.id);
             sockets.broadcast("Your team has stopped the infection!");
-            setTimeout(closeArena, 2500);
+            setTimeout(closeArena, 5000);
         }
     } else {
         switch (Math.random() * 4 | 0) {

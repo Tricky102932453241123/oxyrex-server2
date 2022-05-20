@@ -32,11 +32,11 @@ let soccer = {
         if (soccer.timer <= 0) {
             if (soccer.scoreboard[0] > soccer.scoreboard[1]) {
                 sockets.broadcast("BLUE has won!");
-                setTimeout(closeArena, 2500);
+                setTimeout(closeArena, 5000);
                 return;
             } else if (soccer.scoreboard[0] < soccer.scoreboard[1]) {
                 sockets.broadcast("RED has won!");
-                setTimeout(closeArena, 2500);
+                setTimeout(closeArena, 5000);
                 return;
             } else {
                 sockets.broadcast("It was a tie!");

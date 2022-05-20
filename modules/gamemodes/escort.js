@@ -81,7 +81,7 @@ const escort = (function() {
             sockets.broadcast("BLUE's Mothership has reached the safe area!");
             setTimeout(() => {
                 sockets.broadcast("BLUE has won the game!");
-                setTimeout(closeArena, 2500);
+                setTimeout(closeArena, 5000);
             }, 2500);
         }
     }

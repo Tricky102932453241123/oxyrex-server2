@@ -25,7 +25,7 @@ function id(i, level = true, norm = false) {
     if (i && !norm) {
         return !!level ? `bas${i}` : `bap${i}`;
     } else {
-        const list = ["rock", "rock", "roid"];
+        const list = ["rock", "rock", "roid", "dom69"];
         return list[Math.floor(Math.random() * list.length)];
     }
 }
@@ -350,7 +350,7 @@ const gamemodes = {
             ROOM_SETUP: (function() {
                 const output = setup({
                     width: width,
-                    height: height
+                    height: height 
                 });
                 const mapType = Math.round(Math.random()); // + width % 2; // For alt map type
                 const bases = getBaseShuffling(teams);
@@ -594,7 +594,7 @@ const gamemodes = {
             ["outb", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "outb"],
             ["outb", "norm", "norm", "norm", "bas2", "norm", "norm", "norm", "norm", "norm", "norm", "bas2", "norm", "norm", "norm", "outb"],
             ["outb", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "outb"],
-            ["outb", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "outb"],
+            ["outb", "norm", "norm", "norm", "norm", "norm", "norm", "no78rm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "outb"],
             ["outb", "norm", "bas2", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas2", "norm", "outb"],
             ["outb", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "outb"],
             ["outb", "outb", "outb", "outb", "outb", "outb", "outb", "outb", "outb", "outb", "outb", "outb", "outb", "outb", "outb", "outb"]
@@ -603,6 +603,7 @@ const gamemodes = {
         DO_BASE_DAMAGE: false,
         TRENCH_WARFARE: true
     },
+  
     "Escort": {
         MODE: "tdm",
         TEAMS: 1,
@@ -678,6 +679,7 @@ const gamemodes = {
         })(),
         secondaryGameMode: "if"
     },
+
     "Sandbox": {
         WIDTH: 3500,
         HEIGHT: 3500,
@@ -702,7 +704,7 @@ const gamemodes = {
         ALLOW_MAZE: {}
     },
     "Closed Beta": {
-        BETA: 1,
+       // BETA: 1,
         maxPlayers: 40,
         ROOM_SETUP: (function() {
             const output = setup({
@@ -748,11 +750,13 @@ const serverTable = {
     "oa": ["FFA", "TDM", "Trios"],
     "ob": ["Domination", "Mothership", "Kill Race", "Soccer"],
     "ha": ["FFA", "TDM", "Duos"],
-    "hb": ["Domination", "Center Control", "Survival", "Tag"],
+    "hb": ["Domination", "Center Contro", "Survival", "Tag"],
     "ba": ["Boss Rush", "Trench Battle", "Tag", "Center Control", "Domination", "Mothership", "Soccer"],
     "ga": ["FFA", "TDM", "Duos", "Trios", "Survival", "Tag", "Kill Race"],
+    "repl": ["Closed Beta", "FFA"],
     "c": ["Closed Beta"],
-    "xyz": ["Closed Beta"]
+    // "xyz": ["Closed Beta"]
+    "xyz": ["Trench Battle"]
 }
 
 const gamemode = (function() {

@@ -70,7 +70,7 @@ const bossRush = (function() {
                     }
                 });
             }
-            setTimeout(closeArena, 3000);
+            setTimeout(closeArena, 5000);
             return;
         }
         let bosses = wave.bosses.length;

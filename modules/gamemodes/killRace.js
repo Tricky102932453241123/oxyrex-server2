@@ -33,7 +33,7 @@ const killRace = (function() {
         if (data[teamID] >= 50) {
             gameWon = true;
             sockets.broadcast(teamNames[teamID] + " has won!");
-            setTimeout(closeArena, 2500);
+            setTimeout(closeArena, 5000);
         }
     }
     if (c.KILL_RACE) {

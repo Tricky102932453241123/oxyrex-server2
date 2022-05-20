@@ -61,7 +61,7 @@ let survival = {
                 });
                 instance.sendMessage("Achievement get: " + "Survivor");
             }
-            setTimeout(closeArena, 1500);
+            setTimeout(closeArena, 5000);
         }
     }
 };

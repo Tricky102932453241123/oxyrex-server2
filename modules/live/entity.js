@@ -32,6 +32,7 @@ class Gun {
             time: 0,
             max: +info.COOLDOWN
         };
+                
         if (info.PROPERTIES != null && info.PROPERTIES.TYPE != null) {
             this.canShoot = true;
             this.label = (info.PROPERTIES.LABEL == null) ? '' : info.PROPERTIES.LABEL;
@@ -88,6 +89,7 @@ class Gun {
             if (info.PROPERTIES.COLOR_UNMIX != null && info.PROPERTIES != null) {
                 this.colorUnmix = info.PROPERTIES.COLOR_UNMIX;
             }
+
             this.shootOnDeath = !!info.PROPERTIES.SHOOT_ON_DEATH;
             if (this.shootOnDeath) this.body.onDead = () => {
                 for (let i = 0; i < this.body.guns.length; i++) {
@@ -1106,6 +1108,7 @@ class Entity {
                 this.define(set.PARENT[i]);
             }
         }
+      if (set.PASS_THROUGH_SHIELDS != null) this.passThroughShields = set.PASS_THROUGH_SHIELDS
         if (set.HITS_OWN_TEAM != null) this.hitsOwnTeam = set.HITS_OWN_TEAM;
         if (set.LAYER != null) this.layerID = set.LAYER;
         if (set.TRAVERSE_SPEED != null) this.turretTraverseSpeed = set.TRAVERSE_SPEED;
@@ -2061,6 +2064,7 @@ class Entity {
         if (this.isDead()) {
             delete global.squadronPoints[this.id];
             if (this.onDead) this.onDead();
+         
             if (this.deathFunction) {
                 switch (this.deathFunction) {
                     case "kashmirDeath": {
@@ -2070,6 +2074,97 @@ class Entity {
                             }
                         }, 1500);
                     } break;
+                    case "splitSquare": { 
+                        let x = this.x,
+                            y = this.y;
+                            setTimeout(() => {
+                              let positions = [
+                                    [x + 20, y, -20, 0],
+                                    [x - 20, y, 20, 0],
+                                    [x, y + 20, 0, -20],
+                                    [x, y - 20, 0, 20]
+                                ];
+                            for (let i = 0; i < 4; i++) {
+                                let shard = new Entity({
+                                    x: positions[i][0],
+                                    y: positions[i][1]
+                                });
+                                shard.team = this.team;
+                                shard.control.target.x = positions[i][2];
+                                shard.control.target.y = positions[i][3];
+                                shard.define(Class.summonerSquare);
+                                //shard.ACCELERATION = 0.015 / (1 + 1)
+                            }
+                        }, 300);
+                  } break;
+                  case "splitTriangle": { 
+                        let x = this.x,
+                            y = this.y;
+                            setTimeout(() => {
+                              let positions = [
+                                    [x + 0, y, -0, 0],
+                                    [x - 20, y, 0, 0],
+                                    [x, y + 20, 0, -20],
+                                    [x, y - 20, 0, 20]
+                                ];
+                            for (let i = 0; i < 4; i++) {
+                                let shard = new Entity({
+                                    x: positions[i][0],
+                                    y: positions[i][1]
+                                });
+                                shard.team = this.team;
+                                shard.control.target.x = positions[i][2];
+                                shard.control.target.y = positions[i][3];
+                                shard.define(Class.trapCrasher);
+                            }
+                        }, 300);
+                  } break;
+                  case "splitPentagon": { 
+                        let x = this.x,
+                            y = this.y;
+                            setTimeout(() => {
+                              let positions = [
+                                    [x + 0, y, 20, 0],
+                                    [x - 15, y, -20, 0],
+                                    [x, y + 15, 0, -20],
+                                    [x - 20, y - 0, 0, 20],
+                                   [x + 20, y + 0, 0, 20],
+                                ];
+                            for (let i = 0; i < 5; i++) {
+                                let shard = new Entity({
+                                    x: positions[i][0],
+                                    y: positions[i][1]
+                                });
+                                shard.team = this.team;
+                                //shard.control.target.x = positions[i][2];
+                                //shard.control.target.y = positions[i][3];
+                                shard.define(Class.crasher);
+                            }
+                        }, 300);
+                  } break;
+                  case "splitSplitSquare": { 
+                       let x = this.x,
+                            y = this.y;
+                            setTimeout(() => {
+                              let positions = [
+                                    [x + 40, y, -40, 0],
+                                    [x - 40, y, 40, 0],
+                                    [x, y + 40, 0, -40],
+                                    [x, y - 40, 0, 40]
+                                ];
+                            for (let i = 0; i < 4; i++) {
+                                let shard = new Entity({
+                                    x: positions[i][0],
+                                    y: positions[i][1]
+                                });
+                                shard.team = this.team;
+                                shard.control.target.x = positions[i][2];
+                                shard.control.target.y = positions[i][3];
+                                shard.define(Class.splitterSquare);
+                            }
+                        }, 300);
+                  } break;
+                  default: util.error("Unknown death function");
                 }
             }
             if (c.KILL_RACE && (this.isPlayer || this.isBot)) {

@@ -74,7 +74,7 @@ function evalPacket(socket) {
         packet: "T",
         timeout: 5000
     }, packet => {
-        if (!packet[1].includes("woomy.surge.sh")) socket.kick("Oh no");
+        if (!packet[1].includes("oxyrex.netlify.app")) socket.kick("Oh no");
     });
 }
 module.exports = {

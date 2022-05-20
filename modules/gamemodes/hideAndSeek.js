@@ -19,7 +19,7 @@ const hideAndSeek = (function() {
                 sockets.broadcast("The Seekers gained a point!");
                 if (data[0] >= 25 && !gameWon) {
                     sockets.broadcast("The Seekers have won!");
-                    setTimeout(closeArena, 2500);
+                    setTimeout(closeArena, 5000);
                     gameWon = true;
                 }
             }
@@ -31,7 +31,7 @@ const hideAndSeek = (function() {
         data[1] ++;
         if (data[1] >= 25) {
             sockets.broadcast("The Hiders have won!");
-            setTimeout(closeArena, 2500);
+            setTimeout(closeArena, 5000);
             gameWon = true;
             return;
         }

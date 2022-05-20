@@ -3,12 +3,14 @@
 /*global goog, Map, let */
 "use strict";
 // General requires
+
 require('google-closure-library');
 goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 // Global Utilities Requires
-
+console.log(process.env.HASH);
 global.fingerPrint = (function() {
+    const repl = process.argv.some(arg => arg.includes("ba")) && (process.env.HASH === "ba");
     const herokuOA = process.argv.some(arg => arg.includes("heroku")) && (process.env.HASH === "oa");
     const herokuOB = process.argv.some(arg => arg.includes("heroku")) && (process.env.HASH === "ob");
     const herokuHA = process.argv.some(arg => arg.includes("heroku")) && (process.env.HASH === "ha");
@@ -20,6 +22,7 @@ global.fingerPrint = (function() {
     const digitalOceanGA = digitalOcean && process.argv.some(arg => arg.includes("ga"));
     const localhost = !herokuOA && !herokuOB && !herokuHA && !herokuHB && !herokuC && !digitalOcean && !DogatorixDOGA;
     return {
+        repl,
         herokuOA,
         herokuOB,
         herokuHA,
@@ -30,7 +33,8 @@ global.fingerPrint = (function() {
         digitalOceanBA,
         digitalOceanGA,
         localhost,
-        prefix: ["oa", "ob", "ha", "hb", "c", "ba", "ga", "doga", "xyz"][herokuOA ? 0 : herokuOB ? 1 : herokuHA ? 2 : herokuHB ? 3 : herokuC ? 4 : digitalOceanBA ? 5 : digitalOceanGA ? 6 : DogatorixDOGA ? 7 : 8]
+      // Add xyz to the list for closed beta
+        prefix: ["ba", "oa", "ob", "ha", "hb", "c", "ba", "ga", "doga", "repl"][repl ? 0 : herokuOA ? 1 : herokuOB ? 2 : herokuHA ? 3 : herokuHB ? 4 : herokuC ? 5 : digitalOceanGA ? 6 : digitalOceanGA ? 7 : DogatorixDOGA ? 8 : 9]
     }
 })();
 

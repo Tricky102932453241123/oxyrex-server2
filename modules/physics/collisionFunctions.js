@@ -451,7 +451,7 @@ function reflectCollide(wall, bounce) {
         }
     }
     if (intersected) {
-        if (bounce.type !== 'tank' && bounce.type !== 'miniboss' && bounce.type !== "crasher" && !!!bounce.bounceObstacles) {
+        if (bounce.type !== 'tank' && bounce.type !== 'miniboss' && !!!bounce.bounceObstacles) {
             bounce.kill();
         }/* else if (bounce.collisionArray.some(body => body.type === "wall")) {
             const dir = Math.PI * ((Math.random() * 4) | 0);

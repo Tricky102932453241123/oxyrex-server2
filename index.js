@@ -90,6 +90,7 @@ const gameloop = (() => {
                 if (instance.label === "Collision" || other.label === "Collision") return;
                 if (instance.team === other.team || instance.master.id === other.master.id) return;
                 if (instance.isDominator || other.isDominator || instance.isMothership || other.isMothership || instance.type === "miniboss" || other.type === "miniboss") return;
+                if (instance.settings.goThroughWalls || other.settings.goThroughWalls || instance.master.settings.goThroughWalls || other.master.settings.goThroughWalls || instance.master.godmode || other.master.godmode) return;
                 let shield = instance.settings.hitsOwnType === "everything" ? instance : other,
                     entity = instance.settings.hitsOwnType === "everything" ? other : instance;
                 firmcollide(shield, entity);
@@ -428,7 +429,7 @@ const maintainloop = (() => {
                         break;
                     case 1:
                         choice = [
-                            [Class.summoner, Class.eliteSkimmer, Class.palisade, Class.atrium, Class.guardian, Class.quadriatic], 1 + (Math.random() * 2 | 0), 'a', 'norm'
+                            [Class.summoner, Class.eliteSkimmer, Class.palisade, Class.atrium, Class.guardian, Class.quadriatic, Class.defender], 1 + (Math.random() * 2 | 0), 'a', 'norm'
                         ];
                         sockets.broadcast("A strange trembling...");
                         break;
@@ -521,7 +522,7 @@ const maintainloop = (() => {
     })();
     let spawnCrasher = (() => {
         const config = {
-            max: 1,
+            max: 10,
             chance: .9,
             sentryChance: 0.95,
             crashers: [Class.crasher, Class.fragment, Class.dartCrasher],
@@ -638,7 +639,10 @@ const maintainloop = (() => {
             o.skill.set(set.build);
         }, 3000 + (Math.floor(Math.random() * 7000)));
         return o;
-    };
+    }; /*
+    if (c.C_Day) {
+    let placeDom = 0 = > {let count = 5 for(let loc of room['dom69'])} {let o = new Entity(loc) o.define(ran.choose[Class.destroyerDominator, Class.gunnerDominator, Class.trapperDominator, Class.droneDominator, Class.steamrollerDominator, Class.autoDominator, Class.crockettDominator, Class.spawnerDominator]) o.team = 12 o.ondeath {sockets.broadcast('omgomg the blue team got baldom get rekt red team')o.define(Class.baldom) o.team = 10}}
+      }} */
     if (c.SPACE_MODE) {
         let placeMoon = () => {
             let o = new Entity({
@@ -792,17 +796,34 @@ const maintainloop = (() => {
             new FoodType("Normal Food", [
                 Class.egg, Class.square, Class.triangle,
                 Class.pentagon, Class.bigPentagon
-            ], ["scale", 4], 4000),
+            ], ["scale", 4], 50000),
             new FoodType("Rare Food", [
                 Class.gem, Class.greensquare, Class.greentriangle,
                 Class.greenpentagon
-            ], ["scale", 5], 1),
+            ], ["scale", 4], 1),
+            new FoodType("Splitting Food", [
+                Class.splitterSquare, Class.splitterTriangle, /*Class.splitterPentagon*/  
+                Class.splitterSplitterSquare
+            ], ["scale", 2], 1000),
+            new FoodType("Super Rare Food", [
+                Class.jewel, Class.legendarysquare, Class.legendarytriangle,
+                Class.legendarypentagon
+            ], ["scale", 4], 0.05),
             new FoodType("Nest Food", [
                Class.pentagon, Class.scaleneTriangle, Class.rhombus, Class.bigPentagon, Class.hugePentagon,
               /*  Class.alphaHexagon, Class.alphaHeptagon, Class.alphaOctogon,
                 Class.alphaNonagon, Class.alphaDecagon, Class.icosagon*/ // Commented out because stats aren't done yet.
-            ], ["scale", 4], 1, true)
-
+            ], ["scale", 4], 50000, true),
+           new FoodType("Rare Nest Food", [
+               Class.greenpentagon, Class.greenscaleneTriangle, Class.greenrhombus, Class.greenbigPentagon, Class.greenhugePentagon,
+              /*  Class.alphaHexagon, Class.alphaHeptagon, Class.alphaOctogon,
+                Class.alphaNonagon, Class.alphaDecagon, Class.icosagon*/ // Commented out because stats aren't done yet.
+            ], ["scale", 4], 1, true),
+   new FoodType("Super Rare Nest Food", [
+               Class.legendarypentagon, Class.legendaryscaleneTriangle, Class.legendaryrhombus, Class.legendarybigPentagon, Class.legendaryhugePentagon,
+              /*  Class.alphaHexagon, Class.alphaHeptagon, Class.alphaOctogon,
+                Class.alphaNonagon, Class.alphaDecagon, Class.icosagon*/ // Commented out because stats aren't done yet.
+            ], ["scale", 4], 0.05, true)
         ];
         function getFoodType(isNestFood = false) {
             const possible = [[], []];
